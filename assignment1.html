@@ -12,14 +12,84 @@
     <body> 
 
         <div class="header">
-            <h1>Example Student's Assignment 1!</h1>
+            <h1>First Assignment - Blink!</h1>
             <p>
-            <img src="red-panda.jpg" width=400></a>
+                <h2>Circuit</h2>
+                <img src="circuit1.jpg" width=400></a>
+                <img src="circuit2.jpg" width=400></a>
             </p>
-            <p>
-            Here is all the documentation for assignment 1!
-            </p>
+
+            <div class="caption">
+                <p>
+                These are circuit documentations. I chose 100Ω for the resistors for my LEDs because I needed to find the optimal resistor to prevent broken LEDs. brokage . The reasoning is -- All of three (Red, yellow, green) have 1.8 V drop. Current is 20 mA. Voltage from Arduino is 5V. Using Ohm’s law(V = I x R), the circulation to find R is V = 5V - 1.8V = 3.2 V = 0.02 (20mA) x R. Thus, I found R is 160Ω. And the resistors I chose are the nearest value to 160Ω which is the finding. I could've used 220Ω one but the brightness using 160Ω was the most adequate.
+                </p>
+            </div>
+
+                <h2>Schematic - the Map</h2>
+                <img src="schematic.jpg" width=400></a>
+
+            <div class="caption">
+                <p>
+                The schematic starts with input(power source) of three pins - pin 2, 3, 4. Then these three pins are connnected to three LED lights independently blinking. So I put three resistors connecting to each light with a optimal level of Ohms. It finishes with GND which circulates the system.
+                </p>
+            </div>
+
+                <h2>Firmware</h2>
+                <pre>
+//Blink
+//Turns an LED on for one second, then off for one second, repeatedly
+  
+//the higher the number, the slower the speed of blinking
+int timer = 600; 
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // use for loop to initialize each pin as an output 
+  for (int pin = 1; pin <=5; pin++)
+  {
+    pinMode(pin, OUTPUT);
+  }
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  //to help the pins blinking from lowest pin to highest
+  for (int pin = 1; pin <=5; pin++)
+  {
+    //turning on pin
+    digitalWrite(pin, HIGH);
+    //applying timer function and adjusting blinking speed
+    delay(timer);
+    //turning off pin
+    digitalWrite(pin, LOW);
+  }
+ //to help the pins blinking from highest pin to lowest 
+ for (int pin = 5; pin >=1.; pin--)
+  {
+    //turning on pin
+    digitalWrite(pin, HIGH);
+    //applying timer function and adjusting blinking speed
+    delay(timer);
+    //turning off pin
+    digitalWrite(pin, LOW);
+  }
+}
+                </pre>
+
+                <h2>Circuit's operation</h2>
+                <img src="circuit operation.gif" width=400></a>
+
+            <div class="caption">
+                <p>
+                These three light bulbs begin to blink from left to right in the horizontal direction and blink from right to left again, repeating this action indefinitely. The speed is 600
+                .
+
+                </p>
+            </div>
+
+            <div>
+            </div>          
         </div>
         
+
     </body>
 </html>
