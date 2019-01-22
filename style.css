@@ -2,11 +2,11 @@
 html, body {
   padding: 0 0 0 0;
   margin: 0;
-  font-family: 'SpaceMono-Regular', 'SpaceMono-Italic', 'SpaceMono-Bold';
+  font-family: <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">;
 }
 
 h1,h2,h3,h4 {
-  font-family: 'SpaceMono-Regular', 'SpaceMono-Italic', 'SpaceMono-Bold';
+  font-family: <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
   }
 
 
