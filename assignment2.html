@@ -12,26 +12,39 @@
     <body> 
 
         <div class="header">
-            <h1>Second Assignment - Fade!</h1>
+            <h1>Second Assignment - Lights that Fade!</h1>
             <p>
                 <h2>Circuit</h2>
+                <p>Creating a schematic, circuit, and code that uses LEDs, a button, a for-loop, digitalWrite(), digitalRead(), and analogWrite(). </p>
                 <img src="circuit2_HW2.JPG" width=400></a>
             </p>
 
             <div class="caption">
                 <p>
-
                 </p>
             </div>
 
-                <h2>Schematic & Calculation for Resistors</h2>
-                <img src="schematic for_HW2.jpg" width=400></a>
+            <p>
+                <h2>Schematic</h2>
+                <img src="schematic for_HW2.JPG" width=400></a>
+            </p>
+
+
+            <h2>Calculation</h2>
+            <img src="calculation for HW2.JPG" width=400></a>
 
             <div class="caption">
+                <h3>LED Resistor</h3>
                 <p>
-
+                I chose 220Ω for the resistors for my LEDs because I needed to find the optimal resistor to prevent broken LEDs. The reasoning is -- two(yellow, green) have 1.8 V drop. Current is 20 mA. Voltage from Arduino is 5V. Using Ohm’s law(V = I x R), the circulation to find R is:5V - 1.8V = 3.2 V = 0.02 (20mA) x R. R is 160Ω. And the resistors nearest value to 160Ω were 220Ω.
+               
+                <h3>Push Button Resistor</h3>
+                <p>
+                To prevent that current goes too high going into the ground pin, which would break the Arduino, the circuit needs a resistor for a push button. The maximum current allowed to go into the ground pin is 200mA. As current voltage is 5V, it needs at least 25 ohms of resistance. So I chose 100ohms for the push button resistor.
                 </p>
             </div>
+
+
 
                 <h2>Firmware</h2>
                 <pre>
@@ -70,17 +83,15 @@ void loop() {
 }
     </pre>
 
-                <h2>Circuit's operation</h2>
-                <img src="HW2.gif" width=400></a>
+            <h2>Circuit's operation</h2>
+            <img src="HW2.gif" width=400></a>
 
             <div class="caption">
                 <p>
-
+                Tada! Once clicked the push button, the yellow LED blinks for 0.5 seconds. Then, the green LED fades in and out smoothly. 
                 </p>
             </div>
-
-            <div>
-            </div>          
+        
         </div>
         
 

@@ -2,11 +2,11 @@
 html, body {
   padding: 0 0 0 0;
   margin: 0;
-  font-family: 'helvetica', 'arial', 'sans';
+  font-family: 'SpaceMono-Regular', 'SpaceMono-Italic', 'SpaceMono-Bold';
 }
 
 h1,h2,h3,h4 {
-  font-family: 'helvetica', 'arial', 'sans';
+  font-family: 'SpaceMono-Regular', 'SpaceMono-Italic', 'SpaceMono-Bold';
   }
 
 
@@ -28,7 +28,7 @@ a {
 .assignment {
   font-size: 12px;
   line-height: 24px;
-  font-family: 'helvetica', 'arial', 'sans';
+  font-family: 'SpaceMono-Regular', 'SpaceMono-Italic', 'SpaceMono-Bold';
   padding: 20px 20px 20px 30px;
   width: 250px;
   height: 350px;
