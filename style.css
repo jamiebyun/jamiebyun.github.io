@@ -2,11 +2,11 @@
 html, body {
   padding: 0 0 0 0;
   margin: 0;
-  font-family: <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">;
-}
+  font-family: 'Space Mono', monospace;
+  }
 
 h1,h2,h3,h4 {
-  font-family: <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  font-family: 'Space Mono', monospace;
   }
 
 
@@ -28,7 +28,7 @@ a {
 .assignment {
   font-size: 12px;
   line-height: 24px;
-  font-family: 'SpaceMono-Regular', 'SpaceMono-Italic', 'SpaceMono-Bold';
+  font-family: 'Space Mono', monospace;
   padding: 20px 20px 20px 30px;
   width: 250px;
   height: 350px;
