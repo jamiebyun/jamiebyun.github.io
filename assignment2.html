@@ -50,32 +50,49 @@
 
                 <h2>Firmware</h2>
                 <pre>
-const int buttonPin = 2;  // the number of the pushbutton pin
-const int yellowLed = 4;   // yellow led connected to pin 4
-const int dimLed = 5;      // green led connected to pin 5
-int buttonValue = 0;       // variable for reading the pushbutton status
-int timer = 500;           // the higher the number, the slower the speed of blinking of yellow LED
+// the number of the pushbutton pin
+const int buttonPin = 2;  
+ // yellow led connected to pin 4
+const int yellowLed = 4; 
+ // green led connected to pin 5
+const int dimLed = 5;   
+// variable for reading the pushbutton status   
+int buttonValue = 0; 
+ // the higher the number, the slower the speed of blinking of yellow LED     
+int timer = 500;          
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-  pinMode(yellowLed, OUTPUT); // initialize yellow LED pin as an output
-  pinMode(buttonPin, INPUT); // initialize pushbutton pin as an input
+   // initialize yellow LED pin as an output
+  pinMode(yellowLed, OUTPUT); 
+  // initialize pushbutton pin as an input
+  pinMode(buttonPin, INPUT); 
 }
 
 void loop() {
-  buttonValue = digitalRead(buttonPin); //read the state of the pushbutton value:
-  if (buttonValue == HIGH) { //check if the pushbutton is pressed. If pressed, buttonValue is High.
-    digitalWrite(yellowLed, HIGH); //turn on yellow LED
-    delay(timer); //wait for 0.5 seconds
-    digitalWrite(yellowLed, LOW);  //turn off yellow LED
-    for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) { //fade in from min to max in increments of 5 points
-    analogWrite(dimLed, fadeValue); //sets the value (range from 0 to 255):
-    delay(20); // wait for 20 milliseconds to see the dimming effect
+   //read the state of the pushbutton value:
+  buttonValue = digitalRead(buttonPin); 
+  //check if the pushbutton is pressed. If pressed, buttonValue is High.
+  if (buttonValue == HIGH) { 
+    //turn on yellow LED
+    digitalWrite(yellowLed, HIGH); 
+    //wait for 0.5 seconds
+    delay(timer); 
+     //turn off yellow LED
+    digitalWrite(yellowLed, LOW); 
+    //fade in from min to max in increments of 5 points
+    for (int fadeValue = 0 ; fadeValue <= 255; fadeValue += 5) { 
+    //sets the value (range from 0 to 255):
+    analogWrite(dimLed, fadeValue);
+    // wait for 20 milliseconds to see the dimming effect
+    delay(20); 
     }
-    
-    for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 5) {  // fade out from max to min in increments of 5 points
-    analogWrite(dimLed, fadeValue); //sets the value (range from 0 to 255):
-    delay(20); //wait for 30 milliseconds to see the dimming effect
+    // fade out from max to min in increments of 5 points
+    for (int fadeValue = 255 ; fadeValue >= 0; fadeValue -= 5) {  
+    //sets the value (range from 0 to 255):
+    analogWrite(dimLed, fadeValue);
+    //wait for 20 milliseconds to see the dimming effect
+    delay(20); 
 
     }
     //check if the pushbutton is pressed. If not, buttonValue is low and turn off the dim LED.
