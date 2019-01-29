@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Jamie's HCDE 439 Physical Computing Page!</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Third Assignment - Input Output!</h1>
+            <p>
+                <h2>Circuit</h2>
+                <p>Creating a schematic, circuit, and code that uses a sensor (e.g. either the photoresistor or the thermistor) in a voltage divider to change the state of an LED. </p>
+                <img src="circuit_HW3.JPG" width=400></a>
+            </p>
+
+            <div class="caption">
+                <p>
+
+                </p>
+            </div>
+
+            <p>
+                <h2>Schematic</h2>
+                <img src="schematic for_HW3.JPG" width=400></a>
+            </p>
+
+
+            <h2>Calculation</h2>
+            <img src="calculation1_HW3.JPG" width=400></a>
+
+            <div class="caption">
+                <h3>LED Resistor</h3>
+                <p>
+                I chose 220Ω for the resistors for my LED because I needed to find the optimal resistor to prevent broken LEDs. The reasoning is -- red LED has 1.8 V drop. Current is 20 mA. Voltage from Arduino is 5V. Using Ohm’s law(V = I x R), the circulation to find R is:5V - 1.8V = 3.2 V = 0.02 (20mA) x R. R is 160Ω. And the resistor nearest value to 160Ω was 220Ω.
+               
+                <h3>Photoresistor Resistor</h3>
+                <p>
+                <img src="calculation2_HW3.JPG" width=400></a>
+
+                </p>
+            </div>
+
+
+
+                <h2>Firmware</h2>
+                <pre>
+
+
+//set pin numbers
+const int ledPin = 13; //the number of the lED pin
+const int ldrPin = A0; //the number of the LDR pin
+
+void setup() {
+    // initialize serial communications at 9600 bps:
+    Serial.begin(9600);
+    //initialize the LED pin as an output
+    pinMode(ledPin, OUTPUT); 
+    //initialize the LDR pin as an output
+    pinMode(ldrPin, INPUT);
+}
+
+void loop() {
+    // read the ldrLED in value
+    int sensorValue = analogRead(ldrPin);        
+    //map it to range of analog out
+    int outputValue = map(sensorValue, 0, 1023, 0, 255);        
+
+    // if the output value is greater than or equal to 200, turn the LED on
+    if (outputValue <= 200) { 
+      // turn on LED      
+      analogWrite(ledPin, 220);        
+      // write to the serial monitor that the LED is on
+      Serial.println("LED is on");
+      // When output value is equal to or less than 200, turn the LED off       
+    } else {  
+      // turn off LED       
+      digitalWrite(ledPin, LOW);  
+       // write to the serial monitor that the LED is off    
+      Serial.println("LED is off");       
+    }
+}
+    </pre>
+
+            <h2>Circuit's operation</h2>
+            <img src="HW3.gif" width=400></a>
+
+            <div class="caption">
+                <p>
+                Tada! Once covering the area and minimizing exposed light near photoresister, the red LED turns on!
+                </p>
+            </div>
+        
+        </div>
+        
+
+    </body>
+</html>
