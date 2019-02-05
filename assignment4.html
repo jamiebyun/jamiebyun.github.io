@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Jamie's HCDE 439 Physical Computing Page!</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Fourth Assignment - High(er) voltage and transistors!</h1>
+            <p>
+                <h2>Circuit</h2>
+                <p> </p>
+                <img src="circuit_HW4.JPG" width=400></a>
+            </p>
+
+            <div class="caption">
+                <p>
+                    Creating a schematic, circuit, and code that uses a transistor to control load power separate from logic power. You have to use analogWrite(), a high-load output device, and an input sensor
+
+                </p>
+            </div>
+
+            <p>
+                <h2>Schematic</h2>
+                <img src="schematic1_for_HW4.JPG" width=400></a>
+             
+            </p>
+
+
+            <h2>Calculation</h2>
+            <img src="calculation1_HW4.JPG" width=400></a>
+
+            <div class="caption">
+                <h3></h3>
+                <p>
+               
+               
+                
+
+                </p>
+            </div>
+
+
+
+                <h2>Firmware</h2>
+                <pre>
+
+
+//set pin numbers
+const int ledPin = 10; //the number of the lED pin
+const int ldrPin = A0; //the number of the LDR pin
+
+int sensorValue = 0; // value read from the photoresistor
+int outputValue = 0; // value output that is mapped out
+
+void setup() {
+    // initialize serial communications at 9600 bps:
+    Serial.begin(9600);
+    //initialize the LED pin as an output
+    pinMode(ledPin, OUTPUT); 
+    //initialize the LDR pin as an output
+    pinMode(ldrPin, INPUT);
+}
+
+void loop() {
+    // read the ldrLED in value
+    sensorValue = analogRead(ldrPin);        
+    //map it to range of analog out
+    outputValue = map(sensorValue, 0, 1023, 0, 255);        
+
+     // When output value is equal to or less than 200, turn the LED on       
+    if (sensorValue <= 200) { 
+      // turn on LED      
+      digitalWrite(ledPin, HIGH); 
+      Serial.println("LED is ON");
+
+    // if the output value is greater than to 200, turn the LED off
+    } else {  
+      // turn off LED       
+      analogWrite(ledPin, 0); 
+      Serial.println("LED is OFF");             
+    }
+}
+    </pre>
+
+            <h2>Circuit's operation</h2>
+            <img src="HW4.gif" width=400></a>
+
+            <div class="caption">
+                <p>
+                Tada! Once covering the area and minimizing exposed light near photoresister, this beautiful LED strip turns on!
+                </p>
+            </div>
+        
+        </div>
+        
+
+    </body>
+</html>
