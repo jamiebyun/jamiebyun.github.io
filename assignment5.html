@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Jamie's HCDE 439 Physical Computing Page!</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Fifth assignment - Motors!</h1>
+            <p>
+                <h2>Circuit</h2>
+                <p> </p>
+                <img src="circuit_HW5.JPG" width=400></a>
+                <img src="circuit2_HW5.JPG" width=400></a>
+
+            </p>
+
+            <div class="caption">
+                <p>
+                    Creating a schematic, circuit, and code that uses an input device to control a motor! Your input device will be the joystick and the motor can be the servo or the DC motor. You must write the motor's position to the Serial port and show the output of the serial port monitor.
+
+                </p>
+            </div>
+
+            <p>
+                <h2>Schematic</h2>
+                <img src="schematic_for_HW5.JPG" width=400></a>
+            </p>
+
+
+
+                <h2>Firmware</h2>
+                <pre>
+
+#include <Servo.h> // include servo library
+
+Servo sv1; // create a servo object
+
+void setup(){
+  sv1.attach(10);// servo motor will be controlled by pin 10
+  Serial.begin(9600); // starts a serial monitor for value checking
+}
+
+void loop() {
+  int x = analogRead(A0); //A0 pin for reading x value
+  int y = analogRead(A1); //A1 pin for reading y value
+
+  int angle1 = map(x, 0, 1023, 0, 150);//moving up to 150 from 75 in x value.
+  sv1.write(angle1); //set the srvo position according to the joystick value 
+  
+  int angle2 = map(y, 0, 1023, 0, 150);//moving up to 150 from 75 in y value.
+  sv1.write(angle2);//set the srvo position according to the joystick value 
+  
+  // Write the current values to the serial monitor 
+  Serial.print("angle1:");
+  Serial.println(angle1);
+  Serial.print("angle2:");
+  Serial.println(angle2);
+
+delay(15); //adding delay
+
+}
+        
+    </pre>
+            <h2>Serial Monitor </h2>
+            <img src="serial_monitor_HW5.PNG" width=300></a>
+
+            <h2>Circuit's operation</h2>
+            <img src="HW5.gif" width=400></a>
+
+            <div class="caption">
+                <p>
+                Tada! The servo motor moving by controlling this joystick with a desired degree.
+                </p>
+            </div>
+        
+        </div>
+        
+
+    </body>
+</html>
