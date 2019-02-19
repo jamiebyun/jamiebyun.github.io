@@ -22,7 +22,7 @@
 
             <div class="caption">
                 <p>
-                    Creating a webpage with p5.js that interacts with data that’s coming from your arduino over serial. You must use Serial.print and p5.js. Your webpage must be interactive.
+                    Creating an interactive webpage with p5.js that interacts with data that’s coming from your arduino over serial.
 
                 </p>
             </div>
@@ -34,22 +34,17 @@
 
 
 
-                
-
-
                 <h2>Fireware for Arduino</h2>
                 <pre>
 
 void setup() {
   Serial.begin(9600);
-
 }
 
 void loop() {
   int sensor = analogRead(A0);
   Serial.println(sensor);
   delay(50);
-
 }
         
     </pre>
@@ -113,7 +108,7 @@ function serialEvent() {
   } 
 }
 
-//Creating a variable for new raius
+//Creating a variable for new radius
 var recOne;
 
 function draw() {
@@ -137,8 +132,8 @@ function draw() {
 
     </pre>
 
-    <p> Example code from last lecture is extended by this new draw function, which resizes a circle and a triangle controlling values from a potentiometer. </p>
-            <h2>Serial Monitor </h2>
+    <p> The draw function resizes a circle and a triangle controlling values from a potentiometer. </p>
+
 
             <h2>Circuit's operation</h2>
             <img src="Action HW6.gif" width=400></a>
