@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Jamie's HCDE 439 Physical Computing Page!</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet">
+
+    </head> 
+    <body> 
+
+        <div class="header">
+            <h1>Eighth assignment</h1>
+            <p>
+                <h2>Circuit</h2>
+                <p> </p>
+                <img src="circuit_HW8.JPG" width=400></a>
+                <img src="circuit2_HW8.JPG" width=400></a>
+            </p>
+
+
+            <div class="caption">
+                <p>
+                    To create this circuit with a red LED and resistor, I soldered wires on the perf board to connenct red LED and resistor. It is necessary to know how to use soldering method and perf board just in case your breadboard doesn't fit inside your product. 
+
+
+                </p>
+            </div>
+
+            <p>
+                <h2>Schematic & Calculation</h2>
+                <img src="schematic_for_HW8.JPG" width=400></a>
+                <img src="calculation for HW8.JPG" width=400></a>
+            </p>
+
+            <p>
+            I chose 220Ω for the resistors for my LEDs because I needed to find the optimal resistor to prevent broken LEDs. The reasoning is -- the red LED has 1.8 V drop. Current is 20 mA. Voltage from Arduino is 5V. Using Ohm’s law(V = I x R), the circulation to find R is:5V - 1.8V = 3.2 V = 0.02 (20mA) x R. R is 160Ω. And the resistors nearest value to 160Ω were 220Ω.
+
+            </p>
+
+
+
+
+            <h2>Circuit's operation</h2>
+            <img src="HW8.gif" width=400></a>
+            <p>When 5V is connected, the LED turns on. If not, it turns off.</p>
+        
+        </div>
+        
+
+    </body>
+</html>
